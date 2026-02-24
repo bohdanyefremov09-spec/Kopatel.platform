@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kOPATEL_PLATFORM</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">kOPATEL_PLATFORM</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Главная</a></li>
+                    <li><a href="#about">О сервере</a></li>
+                    <li><a href="#donate" class="nav-btn">Магазин</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1> твое ПРИКЛЮЧЕНИЕ <br> НАЧИНАЕТСЯ ЗДЕСЬ</h1>
+            <p>Командные бои, классы и тактика каждый день.</p>
+            
+
+            <div class="status">
+                <span class="dot"></span> Сейчас в игре: <b id="online-count">0</b>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-tabs">
+        <div class="container">
+            <div class="tabs">
+                <button class="tab-button active" onclick="openTab('ip')">IP Адрес</button>
+                <button class="tab-button" onclick="openTab('telegram')">Telegram</button>
+                <button class="tab-button" onclick="openTab('bot')">Бот</button>
+                <button class="tab-button" onclick="openTab('support')">Поддержка</button>
+            </div>
+            <div id="ip" class="tab-content active">
+                <h3>IP Адрес Сервера</h3>
+                <div class="ip-box" onclick="copyIP()">
+                    <span id="server-ip">game11.gamely.pro:24001</span>
+                    <span class="copy-hint">Нажми, чтобы скопировать</span>
+                </div>
+                <p>Версия: 1.20.1 | Режим: Выживание</p>
+            </div>
+            <div id="telegram" class="tab-content">
+                <h3>Наш Telegram Канал</h3>
+                <p>Присоединяйтесь к нашему Telegram каналу для новостей и обновлений!</p>
+                <a href="https://t.me/copalpal" target="_blank" class="link-btn">Перейти в Telegram</a>
+            </div>
+            <div id="bot" class="tab-content">
+                <h3>Telegram Бот</h3>
+                <p>Используйте нашего бота для получения информации о сервере и донатов.</p>
+                <a href="https://t.me/kopatel_platform_bot" target="_blank" class="link-btn">Написать боту</a>
+            </div>
+            <div id="support" class="tab-content">
+                <h3>Поддержка</h3>
+                <p>Свяжитесь с нашей поддержкой в Telegram для помощи и вопросов.</p>
+                <a href="https://t.me/kopatel_support_bot" target="_blank" class="link-btn">Написать в поддержку</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <h2>О сервере</h2>
+            <p>Наш сервер предлагает уникальный опыт игры в Minecraft с множеством модов, мини-игр и активным сообществом. Присоединяйтесь к нам и наслаждайтесь игрой!</p>
+        </div>
+    </section>
+
+    <section class="teams-classes">
+        <div class="container">
+            <h2>Команды и Классы</h2>
+            <p>На сервере есть две команды: Синие и Красные. Выберите свою команду и класс для участия в боях!</p>
+            <div class="teams">
+                <div class="team blue">
+                    <h3>Синяя Команда</h3>
+                    <p>Команда защиты и стратегии.</p>
+                </div>
+                <div class="team red">
+                    <h3>Красная Команда</h3>
+                    <p>Команда атаки и агрессии.</p>
+                </div>
+            </div>
+            <div class="classes">
+                <h3>Классы</h3>
+                <div class="class-list">
+                    <div class="class-item">
+                        <h4>Инженер</h4>
+                        <p>Строит укрепления и ремонтирует технику.</p>
+                    </div>
+                    <div class="class-item">
+                        <h4>Оператор</h4>
+                        <p>Управляет связью и координацией.</p>
+                    </div>
+                    <div class="class-item">
+                        <h4>БПЛА</h4>
+                        <p>Управляет дронами для разведки.</p>
+                    </div>
+                    <div class="class-item">
+                        <h4>Снайпер</h4>
+                        <p>Точный стрелок с дальних дистанций.</p>
+                    </div>
+                    <div class="class-item">
+                        <h4>Боец</h4>
+                        <p>Основной солдат для ближнего боя.</p>
+                    </div>
+                    <div class="class-item">
+                        <h4>Медик</h4>
+                        <p>Лечит союзников и поддерживает здоровье.</p>
+                    </div>
+                    <div class="class-item">
+                        <h4>Офицер</h4>
+                        <p>Лидер подразделения.</p>
+                    </div>
+                    <div class="class-item">
+                        <h4>Командир</h4>
+                        <p>Главный лидер, выбирается голосованием.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="donate" id="donate">
+        <div class="container">
+            <h2>Магазин</h2>
+            <p>Поддержите сервер и получите преимущества!</p>
+            <div class="donate-options">
+                <div class="option">
+                    <h3>Смена Команды</h3>
+                    <p>Перейдите в другую команду.</p>
+                    <button onclick="window.open('https://t.me/b_b_e_e_a_a_u_u_t_t_y_y', '_blank')">Купить за 250 звезд</button>
+                </div>
+                <div class="option">
+                    <h3>Смена Класса</h3>
+                    <p>Выберите новый класс.</p>
+                    <button onclick="window.open('https://t.me/b_b_e_e_a_a_u_u_t_t_y_y', '_blank')">Купить за 200 звезд</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
