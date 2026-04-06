@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import Header from './components/Header';
 import HomePage from './pages/HomePage';
@@ -24,7 +24,8 @@ export default function App() {
     <BrowserRouter basename="/Kopatel.platform">
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<><Header /><HomePage /></>} />
+        <Route path="/" element={<Navigate to="/home" replace />} />
+        <Route path="/home" element={<><Header /><HomePage /></>} />
         <Route path="/games" element={<><Header /><GamesPage /></>} />
         <Route path="/the-lost-beyond" element={<><Header /><TheLostBeyondPage /></>} />
         <Route path="/shop" element={<><Header /><ShopPage /></>} />
