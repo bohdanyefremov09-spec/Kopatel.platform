@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { UserData, getSession, setSession, clearSession } from '../utils/auth';
+import { skinUrl } from '../config';
 import AccountDropdown from './AccountDropdown';
 import LoginModal from './LoginModal';
 
@@ -114,7 +115,7 @@ export default function Header() {
                 <div
                   className="skin-face-btn"
                   style={{
-                    backgroundImage: `url(${user ? `https://kopatel-skin-proxy.andrey-mishin2008.workers.dev/skin/${user.skin_system === 'tlauncher' ? 'tlauncher' : 'elyby'}/${user.minecraft}` : 'https://kopatel-skin-proxy.andrey-mishin2008.workers.dev/skin/elyby/Steve'})`,
+                    backgroundImage: `url(${user ? skinUrl(user.skin_system, user.minecraft) : skinUrl('elyby', 'Steve')})`,
                   }}
                 />
               </button>
@@ -142,7 +143,7 @@ export default function Header() {
             <p className="mobile-nav-title">Навигация</p>
             <ul>
               <li><Link to="/home" onClick={closeMenu}>🏠 Главная</Link></li>
-              <li><Link to="/the-lost-beyond" onClick={closeMenu}>⚔️ The lost beyond: reboot</Link></li>
+              <li><Link to="/the-lost-beyond" onClick={closeMenu}>⚔️ The lost beyond: reboot<span className="nav-pause-chip">пауза</span></Link></li>
             </ul>
             <p className="mobile-nav-title">Магазин</p>
             <ul>
@@ -173,7 +174,7 @@ export default function Header() {
               <ul>
                 <li><Link to="/home" onClick={closeMenu}>🏠 Главная</Link></li>
                 <li><Link to="/games" onClick={closeMenu}>🎮 Все сервера</Link></li>
-                <li><Link to="/the-lost-beyond" onClick={closeMenu}>⚔️ The lost beyond: reboot</Link></li>
+                <li><Link to="/the-lost-beyond" onClick={closeMenu}>⚔️ The lost beyond: reboot<span className="nav-pause-chip">пауза</span></Link></li>
               </ul>
               <div className="mobile-nav-title">Магазин</div>
               <ul>
